@@ -1,0 +1,6 @@
+db_host is localhost
+db_port is 5432
+credentials is {
+    username = admin,
+    password = secret
+}

@@ -1,0 +1,7 @@
+subnets is ( 192.168.1.0/24, 192.168.2.0/24 )
+firewall is {
+    rules = {
+        allow = ( 80, 443 ),
+        deny = ( 23 )
+    }
+}
