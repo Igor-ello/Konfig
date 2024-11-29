@@ -10,8 +10,15 @@ def main():
     output_file = sys.argv[2]
     log_file = sys.argv[3]
 
-    assembler = Assemble(input_file, output_file, log_file)
-    assembler.assemble()  # Запуск процесса ассемблирования
+    # Открываем входной файл для чтения
+    try:
+        with open(input_file, 'r') as infile:
+            assembler = Assemble(input_file, output_file, log_file)
+            assembler.assemble(infile)  # Передаем файл в метод assemble
+    except FileNotFoundError:
+        print(f"Ошибка: Входной файл {input_file} не найден.")
+        return 1
+
     return 0
 
 if __name__ == "__main__":
